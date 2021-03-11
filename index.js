@@ -8,7 +8,7 @@ const { join } = require('path');
 
 client.commands = new Discord.Collection();
 
-const prefix = '감자야 ' //자신의 프리픽스
+const prefix = '이노야 ' //자신의 프리픽스
 
 
 const commandFile = readdirSync(join(__dirname, "commands")).filter(file => file.endsWith("js"));
@@ -24,7 +24,7 @@ client.on('ready', () => {
   console.log(`${client.users.cache.size}명`) // 봇을 사용 하고있는 모든 유저
   console.log(`${client.guilds.cache.size}개로`) //봇이 참가해있는 모든 서버 표시
   console.log(`${client.user.id}로 로그인 성공!`); //봇이 온라인되면 cmd 창에 표시
-  client.user.setActivity('감자야 도와줘') //상태메시지
+  client.user.setActivity('이노야 도와줘') //상태메시지
 });
 
 client.on("message", async message => {
@@ -78,7 +78,7 @@ client.on('message', async message => {
 client.on('message', async message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
-    let blacklisted = ["감자야 도와줘"]
+    let blacklisted = ["이노야 도와줘"]
 
     let foundInText = false;
     for (var i in blacklisted) { 
@@ -94,13 +94,13 @@ client.on('message', async message => {
         현재 기능:
         
         날씨
-        감자야 날씨 (지역).
+        이노야 날씨 (지역).
 
         핑
-        감자야 ping 라고 적으면 핑을 알려줍니다.
+        이노야 ping 라고 적으면 핑을 알려줍니다.
 
         글자
-        감자야 글자 (글자) 라고 적으면 되요 (영어만).
+        이노야 글자 (글자) 라고 적으면 되요 (영어만).
         
         ip
         ip
@@ -116,7 +116,7 @@ client.on('message', async message => {
 client.on('message', async message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
-    let blacklisted = ["감자야 도와줘"]
+    let blacklisted = ["이노야 도와줘"]
 
     let foundInText = false;
     for (var i in blacklisted) { 
@@ -130,7 +130,7 @@ client.on('message', async message => {
         .setDescription(` 
 
         코로나
-        감자야 코로나 (kr 등을 적으면 코로나 확진자 등을 알려줘요).
+        이노야 코로나 (kr 등을 적으면 코로나 확진자 등을 알려줘요).
 
         아바타
         자신의 프로필 사진과 링크를 알려줍니다.
@@ -260,7 +260,7 @@ client.on('message', (message) => {
 
 	if (!message.guild) return;
   
-  if (message.content.startsWith('감자야 kick')) {
+  if (message.content.startsWith('이노야 kick')) {
   
 	if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("당신은 그것을 사용할 수 없습니다!");
   
@@ -330,7 +330,7 @@ client.on('message', (message) => {
   
 	if (!message.guild) return;
   
-  if (message.content.startsWith('감자야 ban')) {
+  if (message.content.startsWith('이노야 ban')) {
   
 	if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("당신은 그것을 사용할 수 없습니다!");
   
@@ -401,7 +401,7 @@ client.on('message', (message) => {
 //주사위
 
 client.on("message", (message) => {
-	if (message.content === `감자야 주사위`) {
+	if (message.content === `이노야 주사위`) {
 	  var random = Math.floor(Math.random() * 6) + 1;
 	  console.log(random);
 	  message.channel.send(random);
@@ -411,7 +411,7 @@ client.on("message", (message) => {
 //도배
 
 client.on("message", (message) => {
-	if (message.content === `감자야 도배`) {
+	if (message.content === `이노야 도배`) {
 	  for (var i = 0; i < 50; i++) {
 		message.channel.send(`${message.author.tag} 님의 명령으로 도배중`);
 	  }
