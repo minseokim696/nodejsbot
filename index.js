@@ -55,7 +55,7 @@ client.on("message", async message => {
 client.on('message', async message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') return;
-    let blacklisted = ["시발", "ㅅㅂ", "ㅄ", "ㅂㅅ", "병신", "년", "미친", "ㅗ", "fuck", "씨발", "지렸", "지려", "븅신"] // "감지할 욕설", "감지할 욕설" 이런식으로 적으시면 됩니다
+    let blacklisted = ["시발", "ㅅㅂ", "ㅄ", "ㅂㅅ", "병신", "년", "미친", "ㅗ", "fuck", "씨발", "지렸", "지려", "븅신", "존나", "ㅈㄴ"] // "감지할 욕설", "감지할 욕설" 이런식으로 적으시면 됩니다
     let foundInText = false;
     for (var i in blacklisted) { 
       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
@@ -65,7 +65,7 @@ client.on('message', async message => {
         const user = message.author.id;
         const embed = new Discord.MessageEmbed()
         .setColor('#FF0000')
-        .setDescription(`<@${user}> 씨발놈아 대화를 한다는게 욕을하냐? 개새끼야 시베리안 호랑이 머릿털보다 못한새키
+        .setDescription(`<@${user}> ㄴㄱㅁ
         \n사용한 욕설 : \`\`${message.content}\`\` `);
         message.channel.send(embed)
 }
